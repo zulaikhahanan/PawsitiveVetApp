@@ -7,9 +7,13 @@ const mongoose = require('mongoose');
 var session = require('express-session');
 
 
-app.listen(port, () => {
+/*app.listen(port, () => {
   console.log('Server is up on port ' + port)
-})
+})*/
+
+app.listen(process.env.PORT || 8080, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 
   mongoose.connect('mongodb+srv://aikhx:o5c0Prpdwp1kqPyD@project.grgeq0f.mongodb.net/pv?retryWrites=true&w=majority', {
