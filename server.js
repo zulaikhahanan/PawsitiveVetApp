@@ -38,7 +38,7 @@ app.use(session({
 // Using ejs engine template
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
-
+app.engine('ejs', require('ejs').renderFile);
 
 //Access to CSS,HTML from the Folder named 'public'
 app.use(express.static(path.join(__dirname, 'public')));
