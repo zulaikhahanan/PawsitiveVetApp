@@ -1,0 +1,83 @@
+//Variables Declaration
+const express = require('express');
+const path = require ('path');
+const app = express();
+const port = process.env.PORT || 8080
+const mongoose = require('mongoose');
+var session = require('express-session');
+
+
+app.listen(port, () => {
+  console.log('Server is up on port ' + port)
+})
+
+
+  mongoose.connect('mongodb+srv://aikhx:o5c0Prpdwp1kqPyD@project.grgeq0f.mongodb.net/pv?retryWrites=true&w=majority', {
+
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      }, (err) => {
+        if (!err) {
+          console.log('MongoDB Connection Succeeded.');
+        } else {
+          console.log('Error in DB Connection : ' + err);
+        }
+      }); 
+
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+}));
+
+
+// Using ejs engine template
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'ejs');
+
+
+//Access to CSS,HTML from the Folder named 'public'
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+//Routes
+const index = require('./routes/index');
+const loginPetOwner = require('./routes/loginUser');
+const registerPetOwner = require('./routes/registerUser');
+const registerAdmin = require('./routes/registerAdmin');
+const loginAdmin = require('./routes/loginAdmin');
+const admins = require('./routes/admin');
+const petowners = require('./routes/petowner');
+const appointments = require('./routes/appointment');
+const vets = require('./routes/vet');
+const pets = require('./routes/pet');
+const inquiries = require('./routes/inquiry');
+const userApp = require('./routes/userAppointment');
+const userPet = require('./routes/userPet');
+
+//App use
+app.use("/registerAdmin", registerAdmin);
+app.use("/registerPetOwner", registerPetOwner);
+app.use("/loginUser", loginPetOwner);
+app.use("/loginAdmin", loginAdmin);
+app.use("/", index);
+app.use("/admins", admins);
+app.use("/petowners", petowners);
+app.use("/appointments", appointments);
+app.use("/vets",vets);
+app.use("/pets",pets);
+app.use("/inquiries",inquiries);
+app.use("/userApp",userApp);
+app.use("/userPet",userPet);
+
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+ 
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});

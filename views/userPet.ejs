@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+<style>
+    .button {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    
+    
+    .button1 {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 6px;
+    }</style>
+
+  <title>Pawsitive Vet User Manage Appointment</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area ">
+    <div class="hero_bg_box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="/userPet">
+            <span>
+              Pawsitive Vet
+            </span>
+          </a>
+          <div class="" id="">
+            <div class="User_option">
+              
+            </div>
+
+           
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <div class="main_content">
+    <div class="main_content_bg">
+      <img src="images/content-bg.jpg" alt="">
+    </div>
+
+   
+    <!-- service section -->
+
+    <section class="service_section layout_padding">
+      <div class="container py_mobile_45">
+        <div class="heading_container heading_center">
+          <h2> My Pet Details </h2>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                
+                    <th><center> Member ID</center></th>
+                    <th><center>Name</center></th>
+                    <th><center>Breed</center></th>
+                    <th><center>Age</center></th>
+                    <th><center>Type</center></th>
+                    <th><center>Vaccination (Yes/No) </center></th>
+                    <th><center>Date Of Birth </center></th>
+                    <th><center> Gender (F/M)</center></th>
+                    <th><center>Actions </center></th>
+                </tr>
+            </thead>
+            <%pets.forEach(pet=> {%>
+            <tbody>
+        
+                <tr>
+                
+                    <td><center><%=pet._id %></center></td>
+                    <td><center><%=pet.name %></center></td>
+                    <td><center><%=pet.breed%></center></td>
+                    <td><center><%=pet.age%></center></td>
+                    <td><center><%=pet.type%></center></td>
+                    <td><center><%=pet.vaccination %></center></td>
+                    <td><center><%=pet.DOB %></center></td>
+                    <td><center><%=pet.sex %></center></td>
+                    <td>
+
+                        <form action="/userPet/show/<%= pet._id%>" method="get">
+                            <button type="submit" class="button1">Update Pet</button>
+                        </form>
+                        
+                        &nbsp;
+
+                        <form action="/userPet/delete/<%= pet._id %>" method="post">
+                            <button type="submit" class="button">Delete Pet</button>
+                        </form>
+                        </td>
+                </tr>					
+                <%})%>
+            </tbody>
+        </table>
+    
+        </div>
+       
+
+        <div class="btn-box">
+            <a href="/userAcc">
+                Main Menu
+              </a>
+           
+          &nbsp;
+          <a href="/userPet/addPet">
+            Add Pet
+          </a>
+        </div>
+        
+      </div>
+      
+    </section>
+
+  </div>
+
+   
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section ">
+    <p>
+      &copy; <span id="displayDate"></span> All Rights Reserved. 
+      <a href="/">Pawsitive Vet &copy;</a>
+    </p>
+  </footer>
+  <!-- end  footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <!-- End Google Map -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Book Appointment</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/muli-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- datepicker -->
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="css/stylebook.css"/>
+</head>
+<body>
+<div class="page-content" style="background-image: url('images/pv1.jpeg')">
+	<div class="wizard-v2-content">
+		<div class="wizard-form">
+			<div class="wizard-header">
+				<h3> Pawsitive Vet Book Appointment</h3>
+				<p>Book Your Appointment Now!</p>
+			</div>
+			<form class="form-register" action="/appointments/createApp" method="post">
+				<div id="form-total">
+		
+					<h2>1</h2>
+					<section>
+						<div class="inner">
+							<div class="form-row">
+								<div class="form-holder">
+									<input type="text" name="username" placeholder="Pet Owner User Name" class="form-control" >
+								</div>
+								<div class="form-holder">
+									<select name="type" class="form-control">
+										<option value="" disabled selected>Pet Type</option>
+										<option value="united states">Dog</option>
+										<option value="united kingdom">Cat</option>
+										<option value="viet nam">Others</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									<input type="text" placeholder="Pet Name" class="form-control" name="petname">
+								</div>
+								<div class="form-holder">
+									<select name="categoryAppointment" class="form-control">
+										<option value="" disabled selected>Appointment Category</option>
+										<option value="united states">Vaccination</option>
+										<option value="united kingdom">Neutering</option>
+										<option value="viet nam">Pet Checkup</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder form-holder-2">
+
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									<input type="text" name="date" class="date"  placeholder="dd / mm / yyyy">
+								</div>
+								
+								<div class="form-holder">
+									<input type="time" name="time" class="time">
+								</div>
+							</div>
+						</div>
+					</section>
+					
+			
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.steps.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/main1.js"></script>
+</body>
+</html>
