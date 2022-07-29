@@ -34,7 +34,7 @@
 <h4>2. Open The Folder of Pawsitive Vet In The Visual Studio Code </h4>
 <h4>3. Using "npm install" Command, Install All the Packages/h4>
 <h4>4. Create the Database Named As "pv"</h4>
-<h4>5. Try The Application With Using The Command "npm start" and Access The Website at Server 3003</h4>
+<h4>5. Try The Application With Using The Command "npm start" and Access The Website at Server 8080</h4>
 
 <br>
 <h2>Collections Name</h2>
