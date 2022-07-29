@@ -6,10 +6,13 @@ const port = process.env.PORT || 8080
 const mongoose = require('mongoose');
 var session = require('express-session');
 var http = require('http');
+var bodyParser = require('body-parser');
 
 /*app.listen(port, () => {
   console.log('Server is up on port ' + port)
 })*/
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(process.env.PORT || 8080, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
@@ -31,7 +34,7 @@ app.listen(process.env.PORT || 8080, function(){
 app.use(session({
   secret: 'work hard',
   resave: true,
-  saveUninitialized: false,
+  saveUninitialized: true,
 }));
 
 
