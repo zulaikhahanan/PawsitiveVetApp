@@ -2,6 +2,7 @@
 
 <h4> Subject Course : ITT626 (Back End Technology)</h4>
 
+<h4> Lecturer Name : PROFESOR MADYA DR NOR SHAHNIZA BINTI KAMAL BASHAH </h4>
 
 <h4> Group Members  :</h4><br>
 <table>
