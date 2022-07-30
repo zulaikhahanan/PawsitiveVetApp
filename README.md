@@ -31,7 +31,7 @@
 <h2>Instructions</h2>
 <h3>How To Use The Pawsitive Vet Website</h3>
 
-<h4>1. Clone The Pawsitive Vet Using The Command "gh repo clone zulaikhahanan/Pawsitive-Vet"</h4>
+<h4>1. Clone The Pawsitive Vet Using The Command "gh repo clone zulaikhahanan/PawsitiveVetApp"</h4>
 <h4>2. Open The Folder of Pawsitive Vet In The Visual Studio Code </h4>
 <h4>3. Using "npm install" Command, Install All the Packages</h4>
 <h4>4. Create the Database Named As "pv"</h4>
