@@ -19,7 +19,7 @@ app.listen(process.env.PORT || 8080, function(){
 });
 
 
-  mongoose.connect('mongodb+srv://aikhx:o5c0Prpdwp1kqPyD@project.grgeq0f.mongodb.net/pv?retryWrites=true&w=majority', {
+  mongoose.connect('mongodb+srv://aikhx:iGP6XbABTTOoKrB0@project.grgeq0f.mongodb.net/pv?retryWrites=true&w=majority', {
 
         useNewUrlParser: true,
         useUnifiedTopology: true
